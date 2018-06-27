@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo--搭建一个属于你自己的blog | Koalaky</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Koalaky,Koalaky's Blog" />
+  
+  <meta name="description" content="俗话说的好，酒足思淫欲，吃饱没事干。闲暇时间除了看看世界杯总想搞点事情-&amp;gt;_&amp;lt;-,思来想去，翻来覆去，弄个blog玩吧，总比天天看直播，刷微博有点意义，不仅能装？？，也是给以后留点念想是吧~（还是想装？）废话有点多，进入正题啦啊啊~ 话说这个Hexo是个啥？怎么搭呢？要是太麻烦太复杂的还是算了吧！OK，上第一道开胃菜！ 开胃菜–算算甜甜就是我，我就是HexoHexo是个啥咧？Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo--搭建一个属于你自己的blog">
+<meta property="og:url" content="https://kykoala.github.io/kyBlog/2018/06/27/learn-hexo/index.html">
+<meta property="og:site_name" content="Koalaky">
+<meta property="og:description" content="俗话说的好，酒足思淫欲，吃饱没事干。闲暇时间除了看看世界杯总想搞点事情-&amp;gt;_&amp;lt;-,思来想去，翻来覆去，弄个blog玩吧，总比天天看直播，刷微博有点意义，不仅能装？？，也是给以后留点念想是吧~（还是想装？）废话有点多，进入正题啦啊啊~ 话说这个Hexo是个啥？怎么搭呢？要是太麻烦太复杂的还是算了吧！OK，上第一道开胃菜！ 开胃菜–算算甜甜就是我，我就是HexoHexo是个啥咧？Hexo">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/06/27/learn-hexo/hexo.png">
+<meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/06/27/learn-hexo/gitbash.png">
+<meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/06/27/learn-hexo/init.png">
+<meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/06/27/learn-hexo/server.png">
+<meta property="og:updated_time" content="2018-06-27T09:17:36.180Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo--搭建一个属于你自己的blog">
+<meta name="twitter:description" content="俗话说的好，酒足思淫欲，吃饱没事干。闲暇时间除了看看世界杯总想搞点事情-&amp;gt;_&amp;lt;-,思来想去，翻来覆去，弄个blog玩吧，总比天天看直播，刷微博有点意义，不仅能装？？，也是给以后留点念想是吧~（还是想装？）废话有点多，进入正题啦啊啊~ 话说这个Hexo是个啥？怎么搭呢？要是太麻烦太复杂的还是算了吧！OK，上第一道开胃菜！ 开胃菜–算算甜甜就是我，我就是HexoHexo是个啥咧？Hexo">
+<meta name="twitter:image" content="https://kykoala.github.io/kyBlog/2018/06/27/learn-hexo/hexo.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/kyBlog/css/style.css">
+  <script src="/kyBlog/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/kyBlog/" class="left">
+                    <span class="site-title">Koalaky&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="https://kykoala.github.io/kyBlog/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/kyBlog/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/kyBlog/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/kyBlog/">
+                    <img src="/kyBlog/images/koala.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Koalaky&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个不会写代码的吃货不是一个好大厨
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Koalaky" target="_blank" href="//kykoala.github.io/kyBlog/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/kykoala">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-learn-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Hexo--搭建一个属于你自己的blog
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-06-27
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>俗话说的好，酒足思淫欲，吃饱没事干。闲暇时间除了看看世界杯总想搞点事情-&gt;_&lt;-,思来想去，翻来覆去，弄个blog玩吧，总比天天看直播，刷微博有点意义，不仅能装？？，也是给以后留点念想是吧~（还是想装？）<br>废话有点多，进入正题啦啊啊~ 话说这个Hexo是个啥？怎么搭呢？要是太麻烦太复杂的还是算了吧！OK，上第一道开胃菜！</p>
+<h3 id="开胃菜–算算甜甜就是我，我就是Hexo"><a href="#开胃菜–算算甜甜就是我，我就是Hexo" class="headerlink" title="开胃菜–算算甜甜就是我，我就是Hexo"></a>开胃菜–算算甜甜就是我，我就是Hexo</h3><h4 id="Hexo是个啥咧？"><a href="#Hexo是个啥咧？" class="headerlink" title="Hexo是个啥咧？"></a>Hexo是个啥咧？</h4><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br>(官网的介绍还是真简单明了= =)<br><img src="/kyBlog/2018/06/27/learn-hexo/hexo.png" alt="hexo"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if hexo是个啥我不感兴趣，快告诉我怎么搭，就知道瞎扯犊子 T—T:</span><br><span class="line">  别急 广告之后马上回来~</span><br><span class="line">else:</span><br><span class="line">  hexo是个啥咩？给你个官网自己去看吧 哈哈哈 https://hexo.io/ （可自行选择简体中文）</span><br></pre></td></tr></table></figure></p>
+<h4 id="开吃前咱们先喝点水漱漱口"><a href="#开吃前咱们先喝点水漱漱口" class="headerlink" title="开吃前咱们先喝点水漱漱口"></a>开吃前咱们先喝点水漱漱口</h4><p>首先先看一下你的电脑里有木有这些东东~<br>1、Node.js<br>2、Git<br>如果都已经安装过了，那么请先忽略我之后几分钟的废话，快去吃第一道菜吧~<br>为甚要先装这俩东西，好吧，不装不行，没有锅锅碗瓢盆光有米，干吃么？哈哈~<br>跟上节奏5分钟就可以装好了（不管你信不信 ?_?）<br>第一步装node.js ===&gt; <a href="https://nodejs.org" target="_blank" rel="noopener">https://nodejs.org</a><br>官网找到自己对应的下载一个，然后解压下一步，下一步。。。ok完成，不ok你也打不到我 哈哈，老老实实百度吧~<br>第二步装Git  ===&gt; <a href="https://git-scm.com" target="_blank" rel="noopener">https://git-scm.com</a><br>然后同上<br>安装步骤hexo官网也有教程的哦~</p>
+<p>很好 刚好5分钟 =_Y</p>
+<h4 id="第一道菜来了"><a href="#第一道菜来了" class="headerlink" title="第一道菜来了"></a>第一道菜来了</h4><p>首先找个地方新建一个文件夹，这就是放blog的地方咯。然后咩鼠标右键选择Git Bash Here<br><img src="/kyBlog/2018/06/27/learn-hexo/gitbash.png" alt="hexo"><br>1、安装hexo咯~<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli g</span><br></pre></td></tr></table></figure></p>
+<p>如果安装太慢推荐使用淘宝镜像cnpm进行安装（墙裂推荐哦！！）<br>淘宝镜像设置:<br>  npm config set registry “<a href="https://registry.npm.taobao.org&quot;" target="_blank" rel="noopener">https://registry.npm.taobao.org&quot;</a><br>之后的npm都可以换成cnpm了 举个栗子: cnpm install hexo-cli g即可</p>
+<p>2、初始化博客文件夹<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog （blog是你blog的名字 随便写）</span><br></pre></td></tr></table></figure></p>
+<p>3、切换到对应的路径<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> blog (和上面的blog要一样哦~)</span><br></pre></td></tr></table></figure></p>
+<p>4、安装hexo的扩展插件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm install</span><br></pre></td></tr></table></figure></p>
+<p>5、安装其他插件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>这个插件能将你写好的文章部署到github服务器上<br>ok~现在你可以在你最初新建的文件夹中看到一堆不知道是什么的东东~<br><img src="/kyBlog/2018/06/27/learn-hexo/init.png" alt="hexo"></p>
+<ul>
+<li>稍微说明一下<ul>
+<li>node_modules：是依赖包，都是插件</li>
+<li>public：存放的是最后生成的页面</li>
+<li>scaffolds：命令生成文章等的模板</li>
+<li>source：用命令创建的各种文章</li>
+<li>themes：blog的主题</li>
+<li>_config.yml：博客主页的配置</li>
+<li>db.json：source解析所得到的</li>
+<li>package.json：项目所需模块项目的配置信息</li>
+</ul>
+</li>
+</ul>
+<h4 id="第二道菜来了"><a href="#第二道菜来了" class="headerlink" title="第二道菜来了"></a>第二道菜来了</h4><p>写一篇简单的blog试试吧~<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new myblog (myblog是你文章的名字 尽量用英语咯~ 中文打包可能会有问题！)</span><br></pre></td></tr></table></figure></p>
+<p>这时你会看到文件夹中的source里的_posts会有两个文件 一个是myblog的文件夹（这个文件用于放置blog要用的图片什么的 这个地方坑了好久。。。） 一个是myblog的md文件<br>用编译器打开这个md文件 它使用markdown语法写的 所以不清楚怎么用的自行百度学习吧~<br>然后咩！！启动本地服务在页面看看自己的blog吧！哈哈哈~</p>
+<p><font color="#F5222D" size="6" face="黑体">依次</font>输入下面的命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line"></span><br><span class="line">$ hexo g</span><br><span class="line"></span><br><span class="line">$ hexo d</span><br><span class="line"></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></p>
+<p>ok~如果没有什么问题 你会看到服务已经起来了~在浏览器输入下图中的localhost:4000就可以了（因为我的blog放在了二级目录所以后面还有一级。。总之这里你那里显示的啥，就输啥就对了！）<br><img src="/kyBlog/2018/06/27/learn-hexo/server.png" alt="hexo"><br>不过呢！我想大部分可能是有问题的，哈哈哈啊，别问我是怎么知道的，因为我也被坑的好惨 TvT…</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年06月27日 17:17</p>
+        <p>原始链接： <a class="post-url" href="/kyBlog/2018/06/27/learn-hexo/" title="Hexo--搭建一个属于你自己的blog">https://kykoala.github.io/kyBlog/2018/06/27/learn-hexo/</a></p>
+        <footer>
+            <a href="https://kykoala.github.io/kyBlog">
+                <img src="/kyBlog/images/koala.jpg" alt="Koalaky">
+                Koalaky
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/kyBlog/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/kyBlog/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/kyBlog/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/kyBlog/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/kyBlog/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://kykoala.github.io/kyBlog/2018/06/27/learn-hexo/&title=《Hexo--搭建一个属于你自己的blog》 — Koalaky&pic=https://kykoala.github.io/kyBlogimages/koala.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://kykoala.github.io/kyBlog/2018/06/27/learn-hexo/&title=《Hexo--搭建一个属于你自己的blog》 — Koalaky&source=网站简介" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://kykoala.github.io/kyBlog/2018/06/27/learn-hexo/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hexo--搭建一个属于你自己的blog》 — Koalaky&url=https://kykoala.github.io/kyBlog/2018/06/27/learn-hexo/&via=https://kykoala.github.io/kyBlog" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://kykoala.github.io/kyBlog/2018/06/27/learn-hexo/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://kykoala.github.io/kyBlog/2018/06/27/learn-hexo/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开胃菜–算算甜甜就是我，我就是Hexo"><span class="post-toc-text">开胃菜–算算甜甜就是我，我就是Hexo</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Hexo是个啥咧？"><span class="post-toc-text">Hexo是个啥咧？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开吃前咱们先喝点水漱漱口"><span class="post-toc-text">开吃前咱们先喝点水漱漱口</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第一道菜来了"><span class="post-toc-text">第一道菜来了</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第二道菜来了"><span class="post-toc-text">第二道菜来了</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/kyBlog/2017/06/18/test/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Hello World</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 Koalaky<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://kykoala.github.io/kyBlog",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/kyBlog/categories/First/">First</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/kyBlog/tags/First/" style="font-size: 10px;">First</a> <a href="/kyBlog/tags/Second/" style="font-size: 10px;">Second</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="https://kykoala.github.io/kyBlog/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/kyBlog/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/kyBlog/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/kyBlog/tags/First/" style="font-size: 10px;">First</a> <a href="/kyBlog/tags/Second/" style="font-size: 10px;">Second</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/kyBlog/js/search.js"></script>
+<script src="/kyBlog/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/kyBlog/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/kyBlog/js/animate.js"></script>
+
+
+  <script src="/kyBlog/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
