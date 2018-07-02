@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/06/28/learn-python-basis/pylist.png">
 <meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/06/28/learn-python-basis/pytuple.png">
 <meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/06/28/learn-python-basis/count.png">
-<meta property="og:updated_time" content="2018-06-29T03:21:04.556Z">
+<meta property="og:updated_time" content="2018-07-02T06:30:19.787Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python3的基础套餐">
 <meta name="twitter:description" content="为什么要学python? 因为知道pyhton的人很多，但是真正会的人却很少！ 迈入python的大门安装python3.6python官网传送门 =====&amp;gt;  PYTHON走你~下载、安装、配置环境变量，然后win+R cmd 打开命令行后输入python -V 查看当前版本号(注意是大写的V)OK 输入python就进入了python的鱼骨头环境咯~ 基础语法基础数据类型数字(Numb">
@@ -201,12 +201,13 @@
 <h4 id="变量本质"><a href="#变量本质" class="headerlink" title="变量本质"></a>变量本质</h4><p>1、变量不需要先定义再使用，可以直接给变量赋值<br>2、变量可以重复存储不同的数据类型<br>3、可以同时为多个变量赋值<br>4、变量名可以由字母、数字、下划线构成，数字不可以作为开头，大小写敏感，起名字最好是见名知意英文<br>5、不支持自增和自减（++ ,- -）</p>
 <h5 id="变量的引用计数"><a href="#变量的引用计数" class="headerlink" title="变量的引用计数"></a>变量的引用计数</h5><p>python中相同数据的赋值会<font color="#F5222D" size="4" face="黑体">共享</font>同一片空间地址，并不是占用一个新的地址，所以为了记录当前使用这个地址的变量有多少，就有了引用计数的概念。这样做的好处在于可以节约内存，防止产生多余的内存碎片。<br><img src="/kyBlog/2018/06/28/learn-python-basis/count.png" alt="python"></p>
 <ul>
-<li>我们可以使用sys模块下的getrefcount()函数进行变量引用计数的查看<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.getrefcount(value)</span><br></pre></td></tr></table></figure></li>
+<li>我们可以使用sys模块下的getrefcount()函数进行变量引用计数的查看<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.getrefcount(value)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-
+<h4 id="运算表达式"><a href="#运算表达式" class="headerlink" title="运算表达式"></a>运算表达式</h4>
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年06月29日 11:21</p>
+        <p>最后更新： 2018年07月02日 14:30</p>
         <p>原始链接： <a class="post-url" href="/kyBlog/2018/06/28/learn-python-basis/" title="python3的基础套餐">https://kykoala.github.io/kyBlog/2018/06/28/learn-python-basis/</a></p>
         <footer>
             <a href="https://kykoala.github.io/kyBlog">
@@ -293,7 +294,7 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#迈入python的大门"><span class="post-toc-text">迈入python的大门</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装python3-6"><span class="post-toc-text">安装python3.6</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基础语法"><span class="post-toc-text">基础语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基础数据类型"><span class="post-toc-text">基础数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#数字-Number"><span class="post-toc-text">数字(Number)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#字符串-str"><span class="post-toc-text">字符串(str)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#列表-list"><span class="post-toc-text">列表(list)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#元祖-tuple"><span class="post-toc-text">元祖(tuple)</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#变量本质"><span class="post-toc-text">变量本质</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#变量的引用计数"><span class="post-toc-text">变量的引用计数</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#迈入python的大门"><span class="post-toc-text">迈入python的大门</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装python3-6"><span class="post-toc-text">安装python3.6</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基础语法"><span class="post-toc-text">基础语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基础数据类型"><span class="post-toc-text">基础数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#数字-Number"><span class="post-toc-text">数字(Number)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#字符串-str"><span class="post-toc-text">字符串(str)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#列表-list"><span class="post-toc-text">列表(list)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#元祖-tuple"><span class="post-toc-text">元祖(tuple)</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#变量本质"><span class="post-toc-text">变量本质</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#变量的引用计数"><span class="post-toc-text">变量的引用计数</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#运算表达式"><span class="post-toc-text">运算表达式</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
