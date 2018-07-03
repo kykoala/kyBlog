@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/06/28/learn-python-basis/pylist.png">
 <meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/06/28/learn-python-basis/pytuple.png">
 <meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/06/28/learn-python-basis/count.png">
-<meta property="og:updated_time" content="2018-07-02T07:24:46.125Z">
+<meta property="og:updated_time" content="2018-07-03T01:51:30.343Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python3的基础套餐一">
 <meta name="twitter:description" content="为什么要学python? 因为知道pyhton的人很多，但是真正会的人却很少！ 迈入python的大门安装python3.6python官网传送门 =====&amp;gt;  PYTHON走你~下载、安装、配置环境变量，然后win+R cmd 打开命令行后输入python -V 查看当前版本号(注意是大写的V)OK 输入python就进入了python的鱼骨头环境咯~ 基础语法基础数据类型数字(Numb">
@@ -206,6 +206,9 @@
 <li>我们可以使用sys模块下的getrefcount()函数进行变量引用计数的查看<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.getrefcount(value)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<blockquote>
+<p>1、为啥要有引用计数？<br>    定义变量开辟空间，变量多，占用多<br>    值相同的内存空间，互相共享，而不是创建<br>2、引用什么时候会出现？<br>    a = 1 -&gt; 1的引用计数加1<br>    不可变数据对象<br>3、del语句究竟干了啥？<br>    a = 1<br>    b = 1<br>    del a<br>    切断了变量名和具体数据内存地址的连接<br>    该变量所使用数据的引用计数值减一<br><strong>引用计数为0，内存回收</strong></p>
+</blockquote>
 <h4 id="运算表达式"><a href="#运算表达式" class="headerlink" title="运算表达式"></a>运算表达式</h4><h5 id="算数表达式"><a href="#算数表达式" class="headerlink" title="算数表达式"></a>算数表达式</h5><ul>
 <li>四则运算 + - * /<br>当你参与运算的数据类型有复杂的(浮点数要比整数复杂)，结果会向复杂数据类型靠拢<br>Python3的除法默认是给你直接得到浮点数的<br>Python2的除法只能是向参与运算的复杂类型靠拢</li>
 <li>特殊运算符：<ul>
@@ -258,7 +261,7 @@
 </blockquote>
 </li>
 </ul>
-<h4 id="条件语句-分支循环"><a href="#条件语句-分支循环" class="headerlink" title="条件语句 分支循环"></a>条件语句 分支循环</h4><h5 id="条件分支"><a href="#条件分支" class="headerlink" title="条件分支"></a>条件分支</h5><ul>
+<h4 id="条件语句和分支循环"><a href="#条件语句和分支循环" class="headerlink" title="条件语句和分支循环"></a>条件语句和分支循环</h4><h5 id="条件分支"><a href="#条件分支" class="headerlink" title="条件分支"></a>条件分支</h5><ul>
 <li>if语句<br>  条件 -&gt; 要么是真的，要么是假的 bool-&gt; True False<br>  == &gt; &gt;= &lt; &lt;= is is not </li>
 </ul>
 <blockquote>
@@ -279,10 +282,35 @@
 <li>while index:<br>  …<br>else:</li>
 </ul>
 </blockquote>
+<h4 id="输入输出和range函数"><a href="#输入输出和range函数" class="headerlink" title="输入输出和range函数"></a>输入输出和range函数</h4><h5 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h5><ul>
+<li>print函数<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'hello world'</span>)</span><br><span class="line">hello world</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>%d    在字符串中转义输出一个整形     %d无法跨类型输出  %d也可以输出浮点数，但是精度会消失<br>%s    在字符串中转义输出一个字符串   %s可以跨类型输出<br>%f  float 在字符串中转义输出一个浮点数<br>%o    八进制<br>%u    十进制<br>%x    十六进制<br>%c  输出单个字符</p>
+</blockquote>
+<p><strong>print以后在项目里少用，输出 要占用你的效率</strong></p>
+<h5 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h5><ul>
+<li><p>python2:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var = input()</span><br><span class="line">他会对类型做检查，你输的是啥 他就是啥</span><br><span class="line">var = raw_input()</span><br><span class="line">所有接收到的值，都是一个字符串，字符串是无意义的</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>python3:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">input()  == python2里的raw_input</span><br><span class="line">所有接收到的值，都是一个字符串，字符串是无意义的</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="range函数"><a href="#range函数" class="headerlink" title="range函数"></a>range函数</h5><ul>
+<li>python2:  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">range(start, stop, step)</span><br><span class="line">	从start开始到stop结束，并且以step为步长，生产一个列表</span><br><span class="line">range(stop)</span><br><span class="line">	从<span class="number">0</span>开始到stop生产出一个具体的列表</span><br><span class="line">xrange()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>python3:  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">range(start, stop, step)</span><br><span class="line">	从start开始到stop结束，并且以step为步长，生产一个列表</span><br><span class="line">range(stop)</span><br><span class="line">	从<span class="number">0</span>开始到stop生产出一个具体的列表</span><br><span class="line">range() == python2 xrange()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>同符号下，如果步长为负值，那么起点一定是大于终点的</strong></p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年07月02日 15:24</p>
+        <p>最后更新： 2018年07月03日 09:51</p>
         <p>原始链接： <a class="post-url" href="/kyBlog/2018/06/28/learn-python-basis/" title="python3的基础套餐一">https://kykoala.github.io/kyBlog/2018/06/28/learn-python-basis/</a></p>
         <footer>
             <a href="https://kykoala.github.io/kyBlog">
@@ -369,7 +397,7 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#迈入python的大门"><span class="post-toc-text">迈入python的大门</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装python3-6"><span class="post-toc-text">安装python3.6</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基础语法"><span class="post-toc-text">基础语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基础数据类型"><span class="post-toc-text">基础数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#数字-Number"><span class="post-toc-text">数字(Number)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#字符串-str"><span class="post-toc-text">字符串(str)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#列表-list"><span class="post-toc-text">列表(list)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#元祖-tuple"><span class="post-toc-text">元祖(tuple)</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#变量本质"><span class="post-toc-text">变量本质</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#变量的引用计数"><span class="post-toc-text">变量的引用计数</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#运算表达式"><span class="post-toc-text">运算表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#算数表达式"><span class="post-toc-text">算数表达式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#逻辑表达式"><span class="post-toc-text">逻辑表达式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#关系表达式"><span class="post-toc-text">关系表达式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#位运算"><span class="post-toc-text">位运算</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#条件语句-分支循环"><span class="post-toc-text">条件语句 分支循环</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#条件分支"><span class="post-toc-text">条件分支</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#循环语句"><span class="post-toc-text">循环语句</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#迈入python的大门"><span class="post-toc-text">迈入python的大门</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装python3-6"><span class="post-toc-text">安装python3.6</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基础语法"><span class="post-toc-text">基础语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基础数据类型"><span class="post-toc-text">基础数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#数字-Number"><span class="post-toc-text">数字(Number)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#字符串-str"><span class="post-toc-text">字符串(str)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#列表-list"><span class="post-toc-text">列表(list)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#元祖-tuple"><span class="post-toc-text">元祖(tuple)</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#变量本质"><span class="post-toc-text">变量本质</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#变量的引用计数"><span class="post-toc-text">变量的引用计数</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#运算表达式"><span class="post-toc-text">运算表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#算数表达式"><span class="post-toc-text">算数表达式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#逻辑表达式"><span class="post-toc-text">逻辑表达式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#关系表达式"><span class="post-toc-text">关系表达式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#位运算"><span class="post-toc-text">位运算</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#条件语句和分支循环"><span class="post-toc-text">条件语句和分支循环</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#条件分支"><span class="post-toc-text">条件分支</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#循环语句"><span class="post-toc-text">循环语句</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#输入输出和range函数"><span class="post-toc-text">输入输出和range函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#输出"><span class="post-toc-text">输出</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#输入"><span class="post-toc-text">输入</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#range函数"><span class="post-toc-text">range函数</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
