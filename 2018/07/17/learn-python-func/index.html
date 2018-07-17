@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>函数 | Koalaky</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Koalaky,Koalaky's Blog" />
+  
+  <meta name="description" content="世界杯结束了，法国队毫无悬念的夺冠了，话不多说，赶紧学习咯！ 函数为什么要用到函数 按照过程编写代码，一般功能都是一次性的，非常不好维护 把功能封装集成，方便二次开发和维护 def 语句 定义函数的语句  12345def func(参数):    #...代码    return 处理后的结果func 函数名func() 函数运行 函数的参数 形参 是为了方便在提前编写函数时，可以先在函数内部使">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数">
+<meta property="og:url" content="https://kykoala.github.io/kyBlog/2018/07/17/learn-python-func/index.html">
+<meta property="og:site_name" content="Koalaky">
+<meta property="og:description" content="世界杯结束了，法国队毫无悬念的夺冠了，话不多说，赶紧学习咯！ 函数为什么要用到函数 按照过程编写代码，一般功能都是一次性的，非常不好维护 把功能封装集成，方便二次开发和维护 def 语句 定义函数的语句  12345def func(参数):    #...代码    return 处理后的结果func 函数名func() 函数运行 函数的参数 形参 是为了方便在提前编写函数时，可以先在函数内部使">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-17T01:08:21.279Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="函数">
+<meta name="twitter:description" content="世界杯结束了，法国队毫无悬念的夺冠了，话不多说，赶紧学习咯！ 函数为什么要用到函数 按照过程编写代码，一般功能都是一次性的，非常不好维护 把功能封装集成，方便二次开发和维护 def 语句 定义函数的语句  12345def func(参数):    #...代码    return 处理后的结果func 函数名func() 函数运行 函数的参数 形参 是为了方便在提前编写函数时，可以先在函数内部使">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/kyBlog/css/style.css">
+  <script src="/kyBlog/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/kyBlog/" class="left">
+                    <span class="site-title">Koalaky&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="https://kykoala.github.io/kyBlog/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/kyBlog/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/kyBlog/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/kyBlog/">
+                    <img src="/kyBlog/images/koala.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Koalaky&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个不会写代码的吃货不是一个好大厨
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Koalaky" target="_blank" href="//kykoala.github.io/kyBlog/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/kykoala">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-learn-python-func" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      函数
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-07-17
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>世界杯结束了，法国队毫无悬念的夺冠了，话不多说，赶紧学习咯！</p>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><h5 id="为什么要用到函数"><a href="#为什么要用到函数" class="headerlink" title="为什么要用到函数"></a>为什么要用到函数</h5><ul>
+<li>按照过程编写代码，一般功能都是一次性的，非常不好维护</li>
+<li>把功能封装集成，方便二次开发和维护</li>
+<li>def 语句 定义函数的语句</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(参数)</span>:</span></span><br><span class="line">    <span class="comment">#...代码</span></span><br><span class="line">    <span class="keyword">return</span> 处理后的结果</span><br><span class="line">func 函数名</span><br><span class="line">func() 函数运行</span><br></pre></td></tr></table></figure>
+<h5 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h5><ul>
+<li><p><strong>形参</strong> 是为了方便在提前编写函数时，可以先在函数内部使用，挖个坑</p>
+<ul>
+<li>形参你可以想成是一个待赋值的变量</li>
+</ul>
+</li>
+<li><p><strong>实参</strong> 就是函数实际调用时传递进去的值</p>
+</li>
+</ul>
+<h5 id="参数探究"><a href="#参数探究" class="headerlink" title="参数探究"></a>参数探究</h5><ul>
+<li><p>必备参数</p>
+<ul>
+<li><p>当你定义函数时，形参已经有了，在实参传递的过程，一定要和形参一一对应</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(age,name)</span>:</span></span><br><span class="line">    <span class="comment">#age: %d int</span></span><br><span class="line">    <span class="comment">#name: %s str</span></span><br><span class="line">    print(<span class="string">'我的名字%s,我的年纪%d'</span> % (name,age))</span><br><span class="line">name = <span class="string">'小明'</span></span><br><span class="line">age = <span class="number">18</span></span><br><span class="line">func(age,name)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>命名参数</p>
+<p>  *当函数参数太多了，记不住顺序呀  可以指定的写明形参名去赋值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(age,name)</span>:</span></span><br><span class="line">    <span class="comment">#age: %d int</span></span><br><span class="line">    <span class="comment">#name: %s str</span></span><br><span class="line">    print(<span class="string">'我的名字%s,我的年纪%d'</span> % (name,age))</span><br><span class="line">myname = <span class="string">'小明'</span></span><br><span class="line">myage = <span class="number">18</span></span><br><span class="line"><span class="comment">#age</span></span><br><span class="line"><span class="comment">#name</span></span><br><span class="line">func(name = myname, age = myage)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>缺省参数  </p>
+<ul>
+<li><p>可以在函数定义时，指明一个形参的默认值，就可以不给这个具有默认值的形参传递实参了</p>
+</li>
+<li><p>当你给一个具有默认参数的形参传递一个实参，那么会覆盖掉原有的默认值</p>
+</li>
+<li><p>缺省参数的定义顺序一定是从右向左，从后向前</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(name,age=<span class="number">18</span>)</span>:</span> <span class="comment">#缺省参数 默认参数</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#age: %d int</span></span><br><span class="line">    <span class="comment">#name: %s str</span></span><br><span class="line">    print(<span class="string">'我的名字%s,我的年纪%d'</span> % (name,age))</span><br><span class="line">myname = <span class="string">'小明'</span></span><br><span class="line">func(name = myname,age = myage)</span><br><span class="line"><span class="comment">#SyntaxError: non-default argument follows default argument</span></span><br><span class="line"><span class="comment">#语法错误：默认参数后只能有默认参数或者没有形参</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>不定长参数</p>
+<ul>
+<li><p>元组不定长 <strong>*arg</strong></p>
+<ul>
+<li>*号 只是在定义形参时做标识的</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(*arg)</span>:</span></span><br><span class="line">    print(arg) <span class="comment">#-&gt; 元组</span></span><br><span class="line">    <span class="comment">#print(*arg) 不要用！！分裂人格的数据</span></span><br><span class="line">    <span class="comment">#*arg: 代表每一个传入的值，而且不是列表，不是元组，就是每一个</span></span><br><span class="line">    <span class="comment">#print(type(*arg)) #type函数都没办法正常执行</span></span><br><span class="line"><span class="comment">#用户登记</span></span><br><span class="line">func([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],<span class="string">'abc'</span>,<span class="string">'小白'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>字典不定长  <strong>**kwargs</strong></p>
+<ul>
+<li><p>这种不定长传参一定要 命名不定长</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(**kwargs)</span>:</span></span><br><span class="line">    print(kwargs) <span class="comment">#不定长传参(命名传参)成字典</span></span><br><span class="line">    <span class="comment">#print(**kwargs) 直接报错 不让你用</span></span><br><span class="line">func(a=&#123;<span class="string">'name'</span>:<span class="string">'小明'</span>,<span class="string">'sex'</span>:<span class="string">'man'</span>&#125;,b=<span class="number">2</span>,c=<span class="number">3</span>)</span><br><span class="line"><span class="comment">#传递时的形参名作为字典的key 对应的=号的实参是value</span></span><br><span class="line"><span class="comment">#形参a,b,c</span></span><br><span class="line"><span class="comment">#实参就是=后的数据</span></span><br><span class="line"><span class="comment">#cpu disk mem</span></span><br><span class="line">func(<span class="string">'cpu'</span>,<span class="string">'disk'</span>,<span class="string">'mem'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>联合使用</p>
+<ul>
+<li><p>不定长参数可以接收空值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(i,j,*args,**kwargs)</span>:</span></span><br><span class="line">    <span class="comment">#字典的不定长 一定在元组之后</span></span><br><span class="line">    print(i)</span><br><span class="line">    print(j)</span><br><span class="line">    print(args)</span><br><span class="line">    print(kwargs)</span><br><span class="line">func(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="comment">#规定：传递的时候首先传递单纯变量作为元组不定长，键值对不定长必须在后</span></span><br><span class="line"><span class="comment">#SyntaxError: invalid syntax</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年07月17日 09:08</p>
+        <p>原始链接： <a class="post-url" href="/kyBlog/2018/07/17/learn-python-func/" title="函数">https://kykoala.github.io/kyBlog/2018/07/17/learn-python-func/</a></p>
+        <footer>
+            <a href="https://kykoala.github.io/kyBlog">
+                <img src="/kyBlog/images/koala.jpg" alt="Koalaky">
+                Koalaky
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://kykoala.github.io/kyBlog/2018/07/17/learn-python-func/&title=《函数》 — Koalaky&pic=https://kykoala.github.io/kyBlogimages/koala.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://kykoala.github.io/kyBlog/2018/07/17/learn-python-func/&title=《函数》 — Koalaky&source=网站简介" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://kykoala.github.io/kyBlog/2018/07/17/learn-python-func/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《函数》 — Koalaky&url=https://kykoala.github.io/kyBlog/2018/07/17/learn-python-func/&via=https://kykoala.github.io/kyBlog" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://kykoala.github.io/kyBlog/2018/07/17/learn-python-func/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://kykoala.github.io/kyBlog/2018/07/17/learn-python-func/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/kyBlog/tags/python/" class="color2">python</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#函数"><span class="post-toc-text">函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#为什么要用到函数"><span class="post-toc-text">为什么要用到函数</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#函数的参数"><span class="post-toc-text">函数的参数</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#参数探究"><span class="post-toc-text">参数探究</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/kyBlog/2018/07/10/problem/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">学习工作中的踩过的坑~</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 Koalaky<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://kykoala.github.io/kyBlog",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/kyBlog/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/kyBlog/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/kyBlog/tags/python/" style="font-size: 20px;">python</a> <a href="/kyBlog/tags/前端/" style="font-size: 10px;">前端</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="https://kykoala.github.io/kyBlog/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/kyBlog/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/kyBlog/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/kyBlog/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/kyBlog/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/kyBlog/tags/python/" style="font-size: 20px;">python</a> <a href="/kyBlog/tags/前端/" style="font-size: 10px;">前端</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/kyBlog/js/search.js"></script>
+<script src="/kyBlog/js/main.js"></script>
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/kyBlog/js/animate.js"></script>
+
+
+  <script src="/kyBlog/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
