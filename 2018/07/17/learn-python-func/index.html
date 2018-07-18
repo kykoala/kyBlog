@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Koalaky">
 <meta property="og:description" content="世界杯结束了，法国队毫无悬念的夺冠了，话不多说，赶紧学习咯！ 函数为什么要用到函数 按照过程编写代码，一般功能都是一次性的，非常不好维护 把功能封装集成，方便二次开发和维护 def 语句 定义函数的语句  12345def func(参数):    #...代码    return 处理后的结果func 函数名func() 函数运行 函数的参数 形参 是为了方便在提前编写函数时，可以先在函数内部使">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-17T01:08:21.279Z">
+<meta property="og:updated_time" content="2018-07-18T02:22:32.988Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数">
 <meta name="twitter:description" content="世界杯结束了，法国队毫无悬念的夺冠了，话不多说，赶紧学习咯！ 函数为什么要用到函数 按照过程编写代码，一般功能都是一次性的，非常不好维护 把功能封装集成，方便二次开发和维护 def 语句 定义函数的语句  12345def func(参数):    #...代码    return 处理后的结果func 函数名func() 函数运行 函数的参数 形参 是为了方便在提前编写函数时，可以先在函数内部使">
@@ -206,10 +206,23 @@
 </ul>
 </li>
 </ul>
+<h5 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h5><ul>
+<li>函数调用完成之后会返回结果</li>
+<li>默认的函数如果没有返回值，那么返回None</li>
+</ul>
+<h5 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h5><p>我们先来看一个小栗子<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">/* 注释 */</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">	b = <span class="number">2</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>这里的a我们称作是全局变量</li>
+<li>这里的b我们称作是局部变量</li>
+</ul>
+<p>1、全局变量和局部变量有其他语言基础的同学肯定都不会陌生吧。注意再写python代码的时候一定要切记每行的<font color="#F5222D" size="4" face="黑体">缩进</font>！<br>2、所谓全局变量，顾名思义，它是可以在整个脚本运行中都可以使用，局部变量就只能在它所在的作用域中使用啦，函数体内部就是一个小小的作用域咯。局部作用域是可以使用全局变量的。<br>3、函数运行期间会开辟一个新的内存空间，所以如果你在函数体内定义了一个和全局变量相同名字的局部变量的话，那这两个变量可不相同哦，它们是两个不同的变量。</p>
+<p>有的同学会问了，我就想让函数外部能够访问我的局部变量，有没有办法呢？回答是：当然有咯。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">global</span> a</span><br><span class="line"><span class="meta">... </span>    a = <span class="number">1</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>func()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>global可以把一个局部变量提升为一个全局变量，注意看下面的代码。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">global</span> a = <span class="number">1</span></span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">2</span></span><br><span class="line">    <span class="keyword">global</span> a = <span class="number">1</span></span><br><span class="line">             ^</span><br><span class="line">SyntaxError: invalid syntax</span><br></pre></td></tr></table></figure></p>
+<p>声明的时候不要偷懒直接赋值哦~对了，多说一句，之前说过的形参也是局部变量！</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年07月17日 09:08</p>
+        <p>最后更新： 2018年07月18日 10:22</p>
         <p>原始链接： <a class="post-url" href="/kyBlog/2018/07/17/learn-python-func/" title="函数">https://kykoala.github.io/kyBlog/2018/07/17/learn-python-func/</a></p>
         <footer>
             <a href="https://kykoala.github.io/kyBlog">
@@ -296,7 +309,7 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#函数"><span class="post-toc-text">函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#为什么要用到函数"><span class="post-toc-text">为什么要用到函数</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#函数的参数"><span class="post-toc-text">函数的参数</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#参数探究"><span class="post-toc-text">参数探究</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#函数"><span class="post-toc-text">函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#为什么要用到函数"><span class="post-toc-text">为什么要用到函数</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#函数的参数"><span class="post-toc-text">函数的参数</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#参数探究"><span class="post-toc-text">参数探究</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#返回值"><span class="post-toc-text">返回值</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#作用域"><span class="post-toc-text">作用域</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
