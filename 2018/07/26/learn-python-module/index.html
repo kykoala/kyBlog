@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>模块 | Koalaky</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Koalaky,Koalaky's Blog" />
+  
+  <meta name="description" content="Python本身就内置了很多非常有用的模块，只要安装完毕，这些模块就可以立刻使用。python中需要用import导入。如果是第三方的模块则需要先用pip进行下载安装。 Python的内置模块OS模块os模块是干什么的呢？  1、与当前操作系统进行交互2、删除，创建文件及文件夹、获取目录，获取文件夹结构等  1、os.system函数可以执行或者打开对应操作系统下的程序根据你输入的命令123#wi">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模块">
+<meta property="og:url" content="https://kykoala.github.io/kyBlog/2018/07/26/learn-python-module/index.html">
+<meta property="og:site_name" content="Koalaky">
+<meta property="og:description" content="Python本身就内置了很多非常有用的模块，只要安装完毕，这些模块就可以立刻使用。python中需要用import导入。如果是第三方的模块则需要先用pip进行下载安装。 Python的内置模块OS模块os模块是干什么的呢？  1、与当前操作系统进行交互2、删除，创建文件及文件夹、获取目录，获取文件夹结构等  1、os.system函数可以执行或者打开对应操作系统下的程序根据你输入的命令123#wi">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-26T06:37:51.566Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模块">
+<meta name="twitter:description" content="Python本身就内置了很多非常有用的模块，只要安装完毕，这些模块就可以立刻使用。python中需要用import导入。如果是第三方的模块则需要先用pip进行下载安装。 Python的内置模块OS模块os模块是干什么的呢？  1、与当前操作系统进行交互2、删除，创建文件及文件夹、获取目录，获取文件夹结构等  1、os.system函数可以执行或者打开对应操作系统下的程序根据你输入的命令123#wi">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/kyBlog/css/style.css">
+  <script src="/kyBlog/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/kyBlog/" class="left">
+                    <span class="site-title">Koalaky&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="https://kykoala.github.io/kyBlog/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/kyBlog/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/kyBlog/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/kyBlog/">
+                    <img src="/kyBlog/images/koala.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Koalaky&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个不会写代码的吃货不是一个好大厨
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Koalaky" target="_blank" href="//kykoala.github.io/kyBlog/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/kykoala">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-learn-python-module" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      模块
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-07-26
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>Python本身就内置了很多非常有用的模块，只要安装完毕，这些模块就可以立刻使用。python中需要用import导入。如果是第三方的模块则需要先用pip进行下载安装。</p>
+<h4 id="Python的内置模块"><a href="#Python的内置模块" class="headerlink" title="Python的内置模块"></a>Python的内置模块</h4><h5 id="OS模块"><a href="#OS模块" class="headerlink" title="OS模块"></a>OS模块</h5><p>os模块是干什么的呢？</p>
+<blockquote>
+<p>1、与当前操作系统进行交互<br>2、删除，创建文件及文件夹、获取目录，获取文件夹结构等</p>
+</blockquote>
+<p>1、os.system函数可以执行或者打开对应操作系统下的程序根据你输入的命令<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#windows关机脚本</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.system(<span class="string">'shutdown -s -t 1'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>2、os.name 输出当前os模块在哪个平台下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> os</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.name</span><br><span class="line"><span class="string">'nt'</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>posix：类Unix操作 安卓 Centos ubuntu Debian<br>nt：Win<br>mac：MacOS<br>dos：DOS</p>
+</blockquote>
+<p>3、os.getcwd() -&gt; str 获取当前的程序工作目录<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.getcwd()</span><br><span class="line"><span class="string">'C:\\Users\\koalaky'</span></span><br></pre></td></tr></table></figure></p>
+<p>4、os.listdir(path=os.getcwd()) -&gt; list 返回指定path目录下的所有文件及文件夹的列表</p>
+<ul>
+<li>返回的结果是一个字符串列表，并且每一个路径都是相对路径的，另外该函数也会将隐藏文件展示。</li>
+</ul>
+<p>5、os.remove(file_path) </p>
+<ul>
+<li>删除file_path所指定的一个文件</li>
+<li>如果成功返回None，失败了直接报错</li>
+<li>删除的时候一定要指明文件的后缀</li>
+</ul>
+<p>6、os.rmdir(dir_path)</p>
+<ul>
+<li>删除dir_path指定的一个文件夹(目录)</li>
+<li>如果成功返回None，失败了直接报错</li>
+<li>无法递归删除文件夹，如果文件夹不为空，那么删除不了</li>
+</ul>
+<p>7、os.makedirs(‘a/b/c’)</p>
+<ul>
+<li>递归创建目录</li>
+<li>可以嵌套创建目录</li>
+<li>成功返回None，失败则报错</li>
+</ul>
+<p>8、os.mkdir(‘a’)</p>
+<ul>
+<li>创建目录</li>
+<li>不能在linux下创建一个和文件名重名的文件夹，虽然类型不同，但是名字也不能是相同的</li>
+<li>成功返回None，失败则报错</li>
+</ul>
+<p>9、os.chdir()</p>
+<ul>
+<li>在程序运行期间可以通过该函数来改变工作目录</li>
+</ul>
+<p>10、os.rename()</p>
+<ul>
+<li>os模块重命名文件</li>
+</ul>
+<p>os模块下的子模块</p>
+<p>os.path可以处理和路径及文件类型有关的问题</p>
+<p>1、os.path.isfile(path) -&gt; Bool</p>
+<ul>
+<li>判断路径是否是一个真正的文件</li>
+</ul>
+<p>2、os.path.isdir(path) -&gt; Bool</p>
+<ul>
+<li>判断路径是否是一个真正的目录</li>
+</ul>
+<p>3、os.path.join(‘path’,’sub_path’)</p>
+<ul>
+<li>拼接path和sub_path</li>
+<li>可以构成绝对路径</li>
+<li>路径中重复的部分不会被去掉<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.join(<span class="string">'home'</span>,<span class="string">'home/CODE'</span>)</span><br><span class="line"><span class="string">'home/home/CODE'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>4、os.path.exists(path)</p>
+<ul>
+<li>判断路径是否存在</li>
+<li>如果存在返回True，反之返回False</li>
+</ul>
+<p>5、os.path.getsize(path)</p>
+<ul>
+<li>返回路径对应的文件大小</li>
+<li>返回的文件大小单位为Byte</li>
+</ul>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年07月26日 14:37</p>
+        <p>原始链接： <a class="post-url" href="/kyBlog/2018/07/26/learn-python-module/" title="模块">https://kykoala.github.io/kyBlog/2018/07/26/learn-python-module/</a></p>
+        <footer>
+            <a href="https://kykoala.github.io/kyBlog">
+                <img src="/kyBlog/images/koala.jpg" alt="Koalaky">
+                Koalaky
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://kykoala.github.io/kyBlog/2018/07/26/learn-python-module/&title=《模块》 — Koalaky&pic=https://kykoala.github.io/kyBlogimages/koala.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://kykoala.github.io/kyBlog/2018/07/26/learn-python-module/&title=《模块》 — Koalaky&source=网站简介" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://kykoala.github.io/kyBlog/2018/07/26/learn-python-module/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《模块》 — Koalaky&url=https://kykoala.github.io/kyBlog/2018/07/26/learn-python-module/&via=https://kykoala.github.io/kyBlog" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://kykoala.github.io/kyBlog/2018/07/26/learn-python-module/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://kykoala.github.io/kyBlog/2018/07/26/learn-python-module/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/kyBlog/tags/python/" class="color2">python</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Python的内置模块"><span class="post-toc-text">Python的内置模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#OS模块"><span class="post-toc-text">OS模块</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/kyBlog/2018/07/17/learn-python-func/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">函数</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 Koalaky<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://kykoala.github.io/kyBlog",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/kyBlog/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/kyBlog/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/kyBlog/tags/python/" style="font-size: 20px;">python</a> <a href="/kyBlog/tags/前端/" style="font-size: 10px;">前端</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="https://kykoala.github.io/kyBlog/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/kyBlog/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/kyBlog/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/kyBlog/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/kyBlog/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/kyBlog/tags/python/" style="font-size: 20px;">python</a> <a href="/kyBlog/tags/前端/" style="font-size: 10px;">前端</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/kyBlog/js/search.js"></script>
+<script src="/kyBlog/js/main.js"></script>
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/kyBlog/js/animate.js"></script>
+
+
+  <script src="/kyBlog/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
