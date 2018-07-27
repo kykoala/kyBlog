@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Koalaky">
 <meta property="og:description" content="Python本身就内置了很多非常有用的模块，只要安装完毕，这些模块就可以立刻使用。python中需要用import导入。如果是第三方的模块则需要先用pip进行下载安装。 Python的内置模块OS模块os模块是干什么的呢？  1、与当前操作系统进行交互2、删除，创建文件及文件夹、获取目录，获取文件夹结构等  1、os.system函数可以执行或者打开对应操作系统下的程序根据你输入的命令123#wi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-26T06:37:51.566Z">
+<meta property="og:updated_time" content="2018-07-27T01:34:56.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模块">
 <meta name="twitter:description" content="Python本身就内置了很多非常有用的模块，只要安装完毕，这些模块就可以立刻使用。python中需要用import导入。如果是第三方的模块则需要先用pip进行下载安装。 Python的内置模块OS模块os模块是干什么的呢？  1、与当前操作系统进行交互2、删除，创建文件及文件夹、获取目录，获取文件夹结构等  1、os.system函数可以执行或者打开对应操作系统下的程序根据你输入的命令123#wi">
@@ -210,10 +210,67 @@
 <li>返回路径对应的文件大小</li>
 <li>返回的文件大小单位为Byte</li>
 </ul>
+<h5 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h5><p>文件操作，在程序里都是对内存中的文件进行操作！<br>1、创建文件<br>2、打开文件<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fp = open(path, mode=<span class="string">'r'</span>)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>path: 需要打开文件的路径</li>
+<li>mode: 打开文件所使用的权限</li>
+</ul>
+<blockquote>
+<p>读：r read<br>    提供读操作<br>    单纯的读权限打开不存在文件，会直接报错<br>写：w write<br>    提供写操作<br>追加：a append<br>    类似与写权限，只提供对于文件的写操作<br>在权限参数的传递过程中，如果只是单纯的给了一个权限，那么其他权限不享有<br>如果我读写兼备，那么只需要在权限补充一个+号<br>r+<br>w+<br>a+ </p>
+</blockquote>
+<ul>
+<li>open函数返回的是一个文件的句柄</li>
+</ul>
+<p>3、读文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fp.read(num)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>函数直接阅读整个文件，并返回整个文件为一个字符串</li>
+<li>把整个文件读到了内存</li>
+<li>如果给read函数传递了num变量，那么他是通过num来读取对应文件中的指定字符个数</li>
+<li>read函数获取到的文件内容会保留行末尾的\n\r</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fp.readline()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>readline函数一次可以读取文件中的一行内容</li>
+<li>当遇到了\n\r则停止，代表当前是一行了</li>
+<li>当遇到了EOF（文件结束标志），readline如果去读取超过文件本身行数的次数，那么不会报错，只会返回空</li>
+<li>readline不会一次性把整个文件展开在内存，但是需要我们手动的维护行数</li>
+<li>readline函数在获取到文件内容的每一行后，也会保留结尾的\r\n</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fp.readlines()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回了字符串列表</li>
+<li>列表中每一个元素都是一行的数据</li>
+<li>并且保留行末尾的换行符号</li>
+</ul>
+<p>4、写文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fp.write(str)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>成功写入缓冲区中的字符数，用来向文件写入str</li>
+<li>write函数在写入文件内容的时候，不会自动的带换行\r\n</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fp.writelines(str_lines)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>成功时返回None，反之则报错</li>
+<li>用来向文件写入字符串列表，而且列表中的每一个字符串数据不会自动加换行</li>
+</ul>
+<p>Python中自动维护了一个叫做读写指针的东西，这个读写指针会自动的根据你访问文件的量来进行向后移动，读写公用同一个指针。</p>
+<p>5、关闭文件<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fp.close()</span><br></pre></td></tr></table></figure></p>
+<p>6、获取文件读写指针位置<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fp.tell()</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>获取文件读写指针的位置</li>
+<li>返回值获取到的是读写指针的字节数位置</li>
+</ul>
+<p>7、读写指针修改<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fp.seek(offset,when)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>Python中文件读写指针共享<blockquote>
+<p>offset：偏移量<br>  字节为单位<br>when: 从哪里开始移动<br>  0:文件开头<br>  1:当前位置<br>  2:文件末尾<br>a模式下的文件末尾读写指针如何移动到文件头部呢？<br>fp.seek(0,0) -&gt; 回到了文件开头</p>
+</blockquote>
+</li>
+</ul>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年07月26日 14:37</p>
+        <p>最后更新： 2018年07月27日 09:34</p>
         <p>原始链接： <a class="post-url" href="/kyBlog/2018/07/26/learn-python-module/" title="模块">https://kykoala.github.io/kyBlog/2018/07/26/learn-python-module/</a></p>
         <footer>
             <a href="https://kykoala.github.io/kyBlog">
@@ -300,7 +357,7 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Python的内置模块"><span class="post-toc-text">Python的内置模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#OS模块"><span class="post-toc-text">OS模块</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Python的内置模块"><span class="post-toc-text">Python的内置模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#OS模块"><span class="post-toc-text">OS模块</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#文件操作"><span class="post-toc-text">文件操作</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
