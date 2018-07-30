@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Koalaky">
 <meta property="og:description" content="总结一下学习和工作中遇到的问题，踩过的坑多了路就平了！ 定时器有啥坑？说到js中的定时器，那么setTimeout和setInterval应该不会陌生咯。因为最近在做的项目中用到了定时器来实现轮播，所以就免不了会碰到意想不到的坑！  先说一下遇到的问题吧，在页面中的js添加了定时器来实现数据的轮播，如果只是打开这个页面放着不管，这个定时器并没有发现什么问题，跑起来就像一匹欢快小马~ =……=但是如">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-11T07:52:29.618Z">
+<meta property="og:updated_time" content="2018-07-30T09:08:42.245Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习工作中的踩过的坑~">
 <meta name="twitter:description" content="总结一下学习和工作中遇到的问题，踩过的坑多了路就平了！ 定时器有啥坑？说到js中的定时器，那么setTimeout和setInterval应该不会陌生咯。因为最近在做的项目中用到了定时器来实现轮播，所以就免不了会碰到意想不到的坑！  先说一下遇到的问题吧，在页面中的js添加了定时器来实现数据的轮播，如果只是打开这个页面放着不管，这个定时器并没有发现什么问题，跑起来就像一匹欢快小马~ =……=但是如">
@@ -157,10 +157,12 @@
 </ul>
 </blockquote>
 <p>Emmm~遇到问题呢咱们就解决问题，遇到坑掉进去再爬出来，把坑填上踩实走过去就行~<br>项目中的解决办法呢用的是利用setTimeout来模拟轮播并且还要注意一点就是要及时清除定时器！如果不及时清除我不保证它还会出什么幺蛾子！之后效果测试了一下还不错，很破费！百度也搜到说可以利用requestAnimationFrame，具体还没有试过，哈哈~</p>
+<h4 id="video标签"><a href="#video标签" class="headerlink" title="video标签"></a>video标签</h4><p>今儿捣鼓弹幕，突然蹦出来个错误<br>Uncaught (in promise) DOMException: play() failed because the user didn’t interact with the document first.<br>这是嘛意思？谷歌翻译：play（）失败，因为用户没有先与文档交互。<br>试了几个方法发现了一个管用的~高手在民间啊！<br>解决方法：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">muted</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>静音就可以了，Chrome 66为了避免标签产生随机噪音。</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年07月11日 15:52</p>
+        <p>最后更新： 2018年07月30日 17:08</p>
         <p>原始链接： <a class="post-url" href="/kyBlog/2018/07/10/problem/" title="学习工作中的踩过的坑~">https://kykoala.github.io/kyBlog/2018/07/10/problem/</a></p>
         <footer>
             <a href="https://kykoala.github.io/kyBlog">
@@ -249,7 +251,7 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#定时器有啥坑？"><span class="post-toc-text">定时器有啥坑？</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#定时器有啥坑？"><span class="post-toc-text">定时器有啥坑？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#video标签"><span class="post-toc-text">video标签</span></a></li></ol>
         </nav>
     </aside>
     
