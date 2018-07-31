@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/07/26/learn-python-module/csv-w.png">
 <meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/07/26/learn-python-module/csv-w2.png">
 <meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/07/26/learn-python-module/csv-w3.png">
-<meta property="og:updated_time" content="2018-07-30T05:47:02.374Z">
+<meta property="og:updated_time" content="2018-07-31T07:26:28.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模块">
 <meta name="twitter:description" content="Python本身就内置了很多非常有用的模块，只要安装完毕，这些模块就可以立刻使用。python中需要用import导入。如果是第三方的模块则需要先用pip进行下载安装。 Python的内置模块OS模块os模块是干什么的呢？  1、与当前操作系统进行交互2、删除，创建文件及文件夹、获取目录，获取文件夹结构等  1、os.system函数可以执行或者打开对应操作系统下的程序根据你输入的命令123#wi">
@@ -292,10 +292,98 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> csv</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fp = open(<span class="string">'test.csv'</span>,<span class="string">'w'</span>,newline=<span class="string">''</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fileds = [<span class="string">'name'</span>,<span class="string">'age'</span>,<span class="string">'sex'</span>]  <span class="comment">#标题行</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>name = [<span class="string">'Bob'</span>,<span class="string">'Jack'</span>,<span class="string">'Lucy'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>age = [<span class="number">10</span>,<span class="number">16</span>,<span class="number">18</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sex = [<span class="string">'man'</span>,<span class="string">'man'</span>,<span class="string">'woman'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>human_list = []</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> index <span class="keyword">in</span> range(<span class="number">3</span>): <span class="comment">#0-2 </span></span><br><span class="line">    	<span class="comment">#外层循环用来控制生产三个数据</span></span><br><span class="line"><span class="meta">... </span>    human_dict = &#123;&#125;</span><br><span class="line"><span class="meta">... </span>    human_dict[fileds[<span class="number">0</span>]] = name[index] <span class="comment">#name</span></span><br><span class="line"><span class="meta">... </span>    human_dict[fileds[<span class="number">1</span>]] = age[index] <span class="comment">#name</span></span><br><span class="line"><span class="meta">... </span>    human_dict[fileds[<span class="number">2</span>]] = sex[index] <span class="comment">#name</span></span><br><span class="line"><span class="meta">... </span>    human_list.append(human_dict)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dict_write_csv = csv.DictWriter(fp,fileds) <span class="comment">#加工文件对象，指明标题行</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dict_write_csv.writeheader() <span class="comment">#用来在csv文件中写入标题行</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> var <span class="keyword">in</span> human_list: <span class="comment">#遍历用户字典，分别写入csv文件中</span></span><br><span class="line"><span class="meta">... </span>    dict_write_csv.writerow(var)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fp.close()</span><br></pre></td></tr></table></figure>
 <p><img src="/kyBlog/2018/07/26/learn-python-module/csv-w3.png" alt="hexo"></p>
 <p>然后我们再来读一下~<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> csv</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fp = open(<span class="string">'test.csv'</span>,<span class="string">'r'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dict_read_csv = csv.DictReader(fp)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> var <span class="keyword">in</span> dict_read_csv:</span><br><span class="line"><span class="meta">... </span>    print(var[<span class="string">'name'</span>],var[<span class="string">'sex'</span>])</span><br><span class="line">...</span><br><span class="line">Bob man</span><br><span class="line">Jack man</span><br><span class="line">Lucy woman</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fp.close()</span><br></pre></td></tr></table></figure></p>
+<h5 id="时间模块"><a href="#时间模块" class="headerlink" title="时间模块"></a>时间模块</h5><p>time模块处理精确的秒数较多</p>
+<ul>
+<li><p>时间获取</p>
+</li>
+<li><p>获取精确秒数</p>
+</li>
+<li><p>时间字符串展示转换</p>
+</li>
+</ul>
+<p>1、time.time()<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> time</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>time.time()</span><br><span class="line"><span class="number">1533018534.4108987</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>这里获取的是一个浮点数类型时间戳（linux时间：从1970年1月1日， 00:00:00）</li>
+</ul>
+<p>2、time.localtime(float_time)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>time.localtime()</span><br><span class="line">time.struct_time(tm_year=<span class="number">2018</span>, tm_mon=<span class="number">7</span>, tm_mday=<span class="number">31</span>, tm_hour=<span class="number">14</span>, tm_min=<span class="number">31</span>, tm_sec=<span class="number">17</span>, tm_wday=<span class="number">1</span>, tm_yday=<span class="number">212</span>, tm_isdst=<span class="number">0</span>)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>如果不传递参数，那么默认返回本地时间的一个时间元组<blockquote>
+<p>res = time.localtime() -&gt; 时间结果是具备时区的<br>time.struct_time(<br>  tm_year=2018,  年<br>  tm_mon=7,  月<br>  tm_mday=31,  日<br>  tm_hour=14,  时<br>  tm_min=36,  分<br>  tm_sec=33,  秒<br>  tm_wday=1,  星期几  星期一数字是0 从0开始 表示星期几<br>  tm_yday=212,  今年第几天<br>  tm_isdst=0  夏令时<br>)</p>
+</blockquote>
+</li>
+</ul>
+<p>3、time.sleep(seconds)</p>
+<ul>
+<li>程序休眠，让程序挂起，seconds参数是一个秒数</li>
+</ul>
+<p>4、time.clock()</p>
+<ul>
+<li>一般衡量程序的耗时<blockquote>
+<p>win：<br>第一次调用：返回当前的CPU时间<br>第二次调用：返回距离上一次调用所花费的时间<br>linux：<br>直接返回程序运行到执行这个函数所花费的时间</p>
+</blockquote>
+</li>
+</ul>
+<p>5、time.asctime(时间元组)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>time.asctime(time.localtime())</span><br><span class="line"><span class="string">'Tue Jul 31 14:41:49 2018'</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>处理时间元组成为一个可读性更好的字符串</li>
+</ul>
+<p>6、time.strftime(格式，时间元组) -&gt; 良好可读性的字符串<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>time.strftime(<span class="string">"%b %d %Y %H:%M:%S"</span>,time.localtime())</span><br><span class="line"><span class="string">'Jul 31 2018 14:44:21'</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>将时间元组根据你指定的格式来成为一个良好可读性的字符串<br><strong>python中时间日期格式化符号：</strong><blockquote>
+<p>%y 两位数的年份表示（00-99）<br>%Y 四位数的年份表示（000-9999）<br>%m 月份（01-12）<br>%d 月内中的一天（0-31）<br>%H 24小时制小时数（0-23）<br>%I 12小时制小时数（01-12）<br>%M 分钟数（00=59）<br>%S 秒（00-59）<br>%a 本地简化星期名称<br>%A 本地完整星期名称<br>%b 本地简化的月份名称<br>%B 本地完整的月份名称<br>%c 本地相应的日期表示和时间表示<br>%j 年内的一天（001-366）<br>%p 本地A.M.或P.M.的等价符<br>%U 一年中的星期数（00-53）星期天为星期的开始<br>%w 星期（0-6），星期天为星期的开始<br>%W 一年中的星期数（00-53）星期一为星期的开始<br>%x 本地相应的日期表示<br>%X 本地相应的时间表示<br>%Z 当前时区的名称<br>%% %号本身<br><strong>年月日，时分秒中，只有月和天是小写的，其他都是大写的</strong></p>
+</blockquote>
+</li>
+</ul>
+<p>7、time.strptime(良好可读性的字符串，格式) -&gt; 时间元组<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>time.strptime(<span class="string">'2018 07 31 14:53:31'</span>,<span class="string">"%Y %m %d %H:%M:%S"</span>)</span><br><span class="line">time.struct_time(tm_year=<span class="number">2018</span>, tm_mon=<span class="number">7</span>, tm_mday=<span class="number">31</span>, tm_hour=<span class="number">14</span>, tm_min=<span class="number">53</span>, tm_sec=<span class="number">31</span>, tm_wday=<span class="number">1</span>, tm_yday=<span class="number">212</span>, tm_isdst=<span class="number">-1</span>)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>把一个字符串变成时间元组。再变回去的时候，要和之前变化的时候一一对应。</li>
+</ul>
+<h5 id="datetime模块"><a href="#datetime模块" class="headerlink" title="datetime模块"></a>datetime模块</h5><ul>
+<li><p>处理年月日，时分秒的时间创建</p>
+</li>
+<li><p>时间差值计算</p>
+</li>
+<li><p>时间获取</p>
+</li>
+</ul>
+<p>1、datetime.datetime</p>
+<ul>
+<li><p>处理年月日，时分秒的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> datetime</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>datetime.datetime.now()</span><br><span class="line">datetime.datetime(<span class="number">2018</span>, <span class="number">7</span>, <span class="number">31</span>, <span class="number">15</span>, <span class="number">17</span>, <span class="number">23</span>, <span class="number">872765</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>datetime.datetime.today()</span><br><span class="line">datetime.datetime(<span class="number">2018</span>, <span class="number">7</span>, <span class="number">31</span>, <span class="number">15</span>, <span class="number">17</span>, <span class="number">57</span>, <span class="number">305000</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取当前的时间</p>
+</li>
+<li>返回值：datetime.datetime类型</li>
+<li>返回值类型支持差值运算，用来求出两个时间区间的秒数，或者说你指定的时间单位</li>
+</ul>
+<p>2、datetime.timedelta()</p>
+<ul>
+<li>timedalte 是datetime中的一个对象，该对象表示两个时间的差值</li>
+<li>其中参数都是可选，默认值为0</li>
+<li>timedalte 有三个只读属性：<ul>
+<li>timedelta.min：负数最大时间差，相当于  timedelta(-999999999)。</li>
+<li>timedelta.max：正数最大时间差，相当于  timedelta(days=999999999, hours=23, minutes=59, seconds=59, microseconds=999999)。</li>
+<li>timedelta.resolution：两个时间的最小差值 相当于   timedelta(microseconds=1)。</li>
+</ul>
+</li>
+</ul>
+<p>3、datetime.date</p>
+<ul>
+<li>处理年月日，返回当前时间<br>datetime.date.today()<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>datetime.date.today()</span><br><span class="line">datetime.date(<span class="number">2018</span>, <span class="number">7</span>, <span class="number">31</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>4、datetime.time()</p>
+<ul>
+<li>只能处理时分秒，多用来创建时分秒的时间<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>datetime.time(<span class="number">10</span>,<span class="number">50</span>,<span class="number">59</span>)</span><br><span class="line">datetime.time(<span class="number">10</span>, <span class="number">50</span>, <span class="number">59</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>创建时间<br>datetime.datetime(2018,6,6,10,10,59) 创建年月日，时分秒<br>datetime.date(2018,6,6) 创建年月日<br>datetime.time(10,50,59) 创建时分秒</p>
+</blockquote>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年07月30日 13:47</p>
+        <p>最后更新： 2018年07月31日 15:26</p>
         <p>原始链接： <a class="post-url" href="/kyBlog/2018/07/26/learn-python-module/" title="模块">https://kykoala.github.io/kyBlog/2018/07/26/learn-python-module/</a></p>
         <footer>
             <a href="https://kykoala.github.io/kyBlog">
@@ -382,7 +470,7 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Python的内置模块"><span class="post-toc-text">Python的内置模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#OS模块"><span class="post-toc-text">OS模块</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#文件操作"><span class="post-toc-text">文件操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#CSV文件"><span class="post-toc-text">CSV文件</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Python的内置模块"><span class="post-toc-text">Python的内置模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#OS模块"><span class="post-toc-text">OS模块</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#文件操作"><span class="post-toc-text">文件操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#CSV文件"><span class="post-toc-text">CSV文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#时间模块"><span class="post-toc-text">时间模块</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#datetime模块"><span class="post-toc-text">datetime模块</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -394,7 +482,7 @@
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          好用、使用的小工具，小玩意儿
+          好用的小工具，小玩意儿
         
       </span>
     </a>
