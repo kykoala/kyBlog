@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/07/26/learn-python-module/csv-w.png">
 <meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/07/26/learn-python-module/csv-w2.png">
 <meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/07/26/learn-python-module/csv-w3.png">
-<meta property="og:updated_time" content="2018-08-02T01:50:53.367Z">
+<meta property="og:updated_time" content="2018-08-03T01:06:04.568Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模块">
 <meta name="twitter:description" content="Python本身就内置了很多非常有用的模块，只要安装完毕，这些模块就可以立刻使用。python中需要用import导入。如果是第三方的模块则需要先用pip进行下载安装。 Python的内置模块OS模块os模块是干什么的呢？  1、与当前操作系统进行交互2、删除，创建文件及文件夹、获取目录，获取文件夹结构等  1、os.system函数可以执行或者打开对应操作系统下的程序根据你输入的命令123#wi">
@@ -426,10 +426,36 @@
 <li>从seq中 随机抽取num个数据 返回成一个列表<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.sample([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], <span class="number">3</span>)</span><br><span class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.sample([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], <span class="number">3</span>)</span><br><span class="line">[<span class="number">4</span>, <span class="number">3</span>, <span class="number">1</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.sample([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], <span class="number">3</span>)</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.sample([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], <span class="number">2</span>)</span><br><span class="line">[<span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.sample([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], <span class="number">2</span>)</span><br><span class="line">[<span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<h5 id="sys模块"><a href="#sys模块" class="headerlink" title="sys模块"></a>sys模块</h5><p>sys模块提供了一系列有关Python运行环境的变量和函数。下面我们来看一下几个比较常用的方法吧~<br>1、sys.argv<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sys.argv:</span><br><span class="line">	获取当前程序的命令行参数</span><br><span class="line">		命令行参数 就是你在执行.py脚本时传递的</span><br><span class="line">	参数的列表</span><br><span class="line">sys.argv[<span class="number">0</span>]: 当前程序的名字</span><br></pre></td></tr></table></figure></p>
+<p>2、sys.platform</p>
+<ul>
+<li>用来输出当前的环境平台</li>
+</ul>
+<p>3、sys.exit(0)</p>
+<ul>
+<li>直接退出程序</li>
+</ul>
+<p>4、sys.path</p>
+<ul>
+<li>环境变量列表</li>
+</ul>
+<p>5、sys.stdin</p>
+<ul>
+<li>标准输入 input</li>
+</ul>
+<p>6、sys.stdout</p>
+<ul>
+<li>标准输出 print</li>
+</ul>
+<p>7、sys.stderr</p>
+<ul>
+<li>标准出错</li>
+</ul>
+<p>模块部分就先到这里了，之后遇到在进行补充吧~</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年08月02日 09:50</p>
+        <p>最后更新： 2018年08月03日 09:06</p>
         <p>原始链接： <a class="post-url" href="/kyBlog/2018/07/26/learn-python-module/" title="模块">https://kykoala.github.io/kyBlog/2018/07/26/learn-python-module/</a></p>
         <footer>
             <a href="https://kykoala.github.io/kyBlog">
@@ -516,7 +542,7 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Python的内置模块"><span class="post-toc-text">Python的内置模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#OS模块"><span class="post-toc-text">OS模块</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#文件操作"><span class="post-toc-text">文件操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#CSV文件"><span class="post-toc-text">CSV文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#时间模块"><span class="post-toc-text">时间模块</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#datetime模块"><span class="post-toc-text">datetime模块</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#random模块"><span class="post-toc-text">random模块</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Python的内置模块"><span class="post-toc-text">Python的内置模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#OS模块"><span class="post-toc-text">OS模块</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#文件操作"><span class="post-toc-text">文件操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#CSV文件"><span class="post-toc-text">CSV文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#时间模块"><span class="post-toc-text">时间模块</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#datetime模块"><span class="post-toc-text">datetime模块</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#random模块"><span class="post-toc-text">random模块</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#sys模块"><span class="post-toc-text">sys模块</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
