@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>从零学习 -- Swift篇 | Koalaky</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Koalaky,Koalaky's Blog" />
+  
+  <meta name="description" content="只要学不死，就往死里学！俗话说，技多不压身。仅仅局限于Web开发肯定是不行的，应该德智体美劳全面发展！= =~ 刚好因为工作需要公司给配了一台Mac一体机，虽然是11年的，但瘦死骆驼比马大，赶紧抽时间学习学习。话说头一回用苹果系统的我还真是有点不太习惯啊，开机键在哪里我都不知道 T——T新的一周，新的开始，加油咯！ 初识Swift众所周知IOS的开发有两种常用的语言，一个是Objective-C，">
+<meta name="keywords" content="ios、swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从零学习 -- Swift篇">
+<meta property="og:url" content="https://kykoala.github.io/kyBlog/2018/08/22/learn-ios-swift/index.html">
+<meta property="og:site_name" content="Koalaky">
+<meta property="og:description" content="只要学不死，就往死里学！俗话说，技多不压身。仅仅局限于Web开发肯定是不行的，应该德智体美劳全面发展！= =~ 刚好因为工作需要公司给配了一台Mac一体机，虽然是11年的，但瘦死骆驼比马大，赶紧抽时间学习学习。话说头一回用苹果系统的我还真是有点不太习惯啊，开机键在哪里我都不知道 T——T新的一周，新的开始，加油咯！ 初识Swift众所周知IOS的开发有两种常用的语言，一个是Objective-C，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/08/22/learn-ios-swift/playground.png">
+<meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/08/22/learn-ios-swift/var.png">
+<meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/08/22/learn-ios-swift/var2.png">
+<meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/08/22/learn-ios-swift/cgfloat.png">
+<meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/08/22/learn-ios-swift/tuple.png">
+<meta property="og:image" content="https://kykoala.github.io/kyBlog/2018/08/22/learn-ios-swift/tuple2.png">
+<meta property="og:updated_time" content="2018-08-22T06:05:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从零学习 -- Swift篇">
+<meta name="twitter:description" content="只要学不死，就往死里学！俗话说，技多不压身。仅仅局限于Web开发肯定是不行的，应该德智体美劳全面发展！= =~ 刚好因为工作需要公司给配了一台Mac一体机，虽然是11年的，但瘦死骆驼比马大，赶紧抽时间学习学习。话说头一回用苹果系统的我还真是有点不太习惯啊，开机键在哪里我都不知道 T——T新的一周，新的开始，加油咯！ 初识Swift众所周知IOS的开发有两种常用的语言，一个是Objective-C，">
+<meta name="twitter:image" content="https://kykoala.github.io/kyBlog/2018/08/22/learn-ios-swift/playground.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/kyBlog/css/style.css">
+  <script src="/kyBlog/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/kyBlog/" class="left">
+                    <span class="site-title">Koalaky&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="https://kykoala.github.io/kyBlog/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/kyBlog/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/kyBlog/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/kyBlog/">
+                    <img src="/kyBlog/images/koala.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Koalaky&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个不会写代码的吃货不是一个好大厨
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Koalaky" target="_blank" href="//kykoala.github.io/kyBlog/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/kykoala">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-learn-ios-swift" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      从零学习 -- Swift篇
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-08-22
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>只要学不死，就往死里学！俗话说，技多不压身。仅仅局限于Web开发肯定是不行的，应该德智体美劳全面发展！= =~ 刚好因为工作需要公司给配了一台Mac一体机，虽然是11年的，但瘦死骆驼比马大，赶紧抽时间学习学习。话说头一回用苹果系统的我还真是有点不太习惯啊，开机键在哪里我都不知道 T——T<br>新的一周，新的开始，加油咯！</p>
+<h4 id="初识Swift"><a href="#初识Swift" class="headerlink" title="初识Swift"></a>初识Swift</h4><p>众所周知IOS的开发有两种常用的语言，一个是Objective-C，一个就是Swift。因为公司用的是Swift，所以我就先从Swift入手了，Swift里面会掺杂着OC（Objective-C的简称），遇到了在顺便了解吧~OK，话不多说咯，先说一下和平常的Web开发有点不太一样的地方就是环境配置了，配置环境什么的做让人头疼的了，不知道你是不是也有同感哈~ios的开发呢用的IDE肯定是XCode了，但是不同版本的XCode对Swift语法支持是不同的哦！！由于我这台Mac比较老了，系统真是装了一遍又一遍，现在还是用的10.11.6，当我用XCode8.2打开公司的项目后，天啊，一堆的报错，问了同事才知道是XCode版本的问题，好吧，想要升级XCode版本就要在升级系统版本咯！啊啊啊！真是一个头两个大！现在我还在下载10.12.6的系统镜像（怎么吐槽起来！说正事！！）总之给我的第一印象就是比Web开发的要求要高的太多了！不是随随便便就能成功的，哈哈~<br><strong> Swift 是一个类型安全（type safe）的语言。类型安全的语言可以让你清楚地知道代码要处理的值的类型。如果你的代码需要一个String，你绝对不可能不小心传进去一个Int。 </strong><br>在学习基础语法之前，我们先来看一下我们学习时要用到的神器，其实还是XCode了啦，哈哈。XCode中有一个叫playground的东西，感觉就像Chrome里面的控制台差不多，写完demo就能立即看到结果了<br><img src="/kyBlog/2018/08/22/learn-ios-swift/playground.png" alt="hexo"><br>两个红框都可以看作是编译后的结果，怎么样，是不是很方便啊~那么下面我就开始学习一下Swift的基础语法吧！</p>
+<h4 id="常量、变量和声明"><a href="#常量、变量和声明" class="headerlink" title="常量、变量和声明"></a>常量、变量和声明</h4><p>Swift中用let来声明一个常量，用var来声明一个变量。这里可不能和ES6中的语法搞混了哦（ES6中let声明变量，const声明常量）我们在playground中看一下具体的代码吧<br><img src="/kyBlog/2018/08/22/learn-ios-swift/var.png" alt="hexo"><br>如果将一个已经定义好的常量的值改变，Swift是不允许的！<br><img src="/kyBlog/2018/08/22/learn-ios-swift/var2.png" alt="hexo"><br>如果将一个已经定义好的变量的值得类型改变，Swift是不允许的！</p>
+<blockquote>
+<p>注意<br>1、Swift是一个强类型的语言哦<br>2、Swift中不论是let还是var，都只能在将其赋完初值后才能拿来使用！ </p>
+</blockquote>
+<p>肯定有同学会问了，既然是强类型语言，为什么不像Java语言那样在声明的变量前面添加该变量的类型呢？答案是不需要，因为当你给一个变量赋完初始值后，Swift语言中的一个机制（Type inference）就会自动判断这个变量的类型，所以不需要我们显式的去标识这个变量是什么类型。如果你习惯了显式的写法，那么可以这么写</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myHello: <span class="type">String</span> = <span class="string">"hello"</span></span><br></pre></td></tr></table></figure>
+<p>在变量名的后面加冒号，然后将你要定义的类型写上就可以了。</p>
+<h4 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h4><p>Swift的基本类型有：Int、Float和Double、Boolean、String、Tuple</p>
+<h5 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h5><p>Swift这种的整型分的还是比较细的，有Int(有符号)和UInt(无符号)，Int还能分为(Int8、Int16、Int32、Int64)，UInt(UInt8、UInt16、UInt32、UInt64)。不过我们常用的还是Int类型。</p>
+<h5 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h5><p>浮点型有两种，Float和Double。一般Float采用的是32位的表示，Double采用的是64位的表示。截图太麻烦了，直接手写在这里了。<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myNum: <span class="type">Float</span> = <span class="number">3.1415926</span></span><br><span class="line"><span class="keyword">var</span> myDoNum: <span class="type">Double</span> = <span class="number">3.1415926</span></span><br></pre></td></tr></table></figure></p>
+<p>可以自己在playground中看一下这两种类型显式出来的结果有什么不一样.<br>如果将myNum和myDoNum相加，你会看到IDE会毫不犹豫的报错了，因为这两个的类型不相同哦，必须都是Float或者都是Double才能做计算操作哦！<br>类型转换：myNum + Float(myDoNum) 这样就都变成Float类型的了。<br><strong> 如果没有显式的标识定义的类型，默认是Double类型哦。 </strong><br>当我们在开发的时候还会经常用到一个叫CGFloat的类型，这个是为了界面UI设计封装的一种浮点类型。<br><img src="/kyBlog/2018/08/22/learn-ios-swift/cgfloat.png" alt="hexo"></p>
+<h5 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h5><p>和JavaScript语言中的布尔类型一样，true和false（和Python不同哦 Python的布尔类型是要首字母大写的True和False）。<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myBool: <span class="type">Bool</span> = <span class="literal">true</span></span><br><span class="line"><span class="keyword">var</span> myBool2 = <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+<p>当然布尔类型一般还是用在判断语句中居多。</p>
+<h5 id="元祖类型"><a href="#元祖类型" class="headerlink" title="元祖类型"></a>元祖类型</h5><p>学习了解过Python得同学对元祖类型应该并不陌生吧。我们来看一下Swift中的元祖是个什么样子~<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myTuple = (<span class="number">200</span>, <span class="string">"OK"</span>)</span><br><span class="line"><span class="keyword">let</span> myTuple2: (<span class="type">Int</span>, <span class="type">String</span>) = (<span class="number">404</span>, <span class="string">"Not Found"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>元祖可以将几种不同的数据类型用一种类型来标识出来。<br>那么我们如何获取元祖中的元素呢？<br><img src="/kyBlog/2018/08/22/learn-ios-swift/tuple.png" alt="hexo"><br>如果在解包的时候我只想要这个元祖里面的某一个值，其他的值是什么我不关心，也不想取到，这个时候咋整呢？<br><img src="/kyBlog/2018/08/22/learn-ios-swift/tuple2.png" alt="hexo"><br>感觉怎么样，是不是很简单呢！</p>
+<h5 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h5><p>在Swift中字符串使用双引号包裹的，不能用单引号。</p>
+<h5 id="区间运算符"><a href="#区间运算符" class="headerlink" title="区间运算符"></a>区间运算符</h5><p>区间运算符还真是头一回听说是不是，别吓到，容易得很哦~</p>
+<blockquote>
+<p>[a, b] –&gt; a…b<br>[a, b) –&gt; a..&lt;b</p>
+</blockquote>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年08月22日 14:05</p>
+        <p>原始链接： <a class="post-url" href="/kyBlog/2018/08/22/learn-ios-swift/" title="从零学习 -- Swift篇">https://kykoala.github.io/kyBlog/2018/08/22/learn-ios-swift/</a></p>
+        <footer>
+            <a href="https://kykoala.github.io/kyBlog">
+                <img src="/kyBlog/images/koala.jpg" alt="Koalaky">
+                Koalaky
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://kykoala.github.io/kyBlog/2018/08/22/learn-ios-swift/&title=《从零学习 -- Swift篇》 — Koalaky&pic=https://kykoala.github.io/kyBlogimages/koala.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://kykoala.github.io/kyBlog/2018/08/22/learn-ios-swift/&title=《从零学习 -- Swift篇》 — Koalaky&source=网站简介" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://kykoala.github.io/kyBlog/2018/08/22/learn-ios-swift/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《从零学习 -- Swift篇》 — Koalaky&url=https://kykoala.github.io/kyBlog/2018/08/22/learn-ios-swift/&via=https://kykoala.github.io/kyBlog" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://kykoala.github.io/kyBlog/2018/08/22/learn-ios-swift/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://kykoala.github.io/kyBlog/2018/08/22/learn-ios-swift/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/kyBlog/tags/ios、swift/" class="color5">ios、swift</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#初识Swift"><span class="post-toc-text">初识Swift</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#常量、变量和声明"><span class="post-toc-text">常量、变量和声明</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基本类型"><span class="post-toc-text">基本类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#整型"><span class="post-toc-text">整型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#浮点型"><span class="post-toc-text">浮点型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#布尔类型"><span class="post-toc-text">布尔类型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#元祖类型"><span class="post-toc-text">元祖类型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#字符串类型"><span class="post-toc-text">字符串类型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#区间运算符"><span class="post-toc-text">区间运算符</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/kyBlog/2018/08/06/learn-hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Hexo--搭建一个属于你自己的blog</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 Koalaky<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://kykoala.github.io/kyBlog",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/kyBlog/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/kyBlog/tags/ios、swift/" style="font-size: 10px;">ios、swift</a> <a href="/kyBlog/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/kyBlog/tags/python/" style="font-size: 20px;">python</a> <a href="/kyBlog/tags/前端/" style="font-size: 10px;">前端</a> <a href="/kyBlog/tags/工具/" style="font-size: 10px;">工具</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="https://kykoala.github.io/kyBlog/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/kyBlog/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/kyBlog/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/kyBlog/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/kyBlog/tags/ios、swift/" style="font-size: 10px;">ios、swift</a> <a href="/kyBlog/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/kyBlog/tags/python/" style="font-size: 20px;">python</a> <a href="/kyBlog/tags/前端/" style="font-size: 10px;">前端</a> <a href="/kyBlog/tags/工具/" style="font-size: 10px;">工具</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/kyBlog/js/search.js"></script>
+<script src="/kyBlog/js/main.js"></script>
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/kyBlog/js/animate.js"></script>
+
+
+  <script src="/kyBlog/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
